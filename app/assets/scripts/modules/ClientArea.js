@@ -20,11 +20,11 @@ class ClientArea {
         Axios.post('https://objective-noether-e67f67.netlify.com/.netlify/functions/secreat-area', {password: this.field.value}).then(response => {
             this.form.remove()
             this.contentArea.innerHTML = response.data
-        }).catch() => {
+        }).catch(() => {
             this.contentArea.innerHTML = `<p class="client-area__error">Password incorrect.</p>`
             this.field.value = ''
             this.field.focus()
-        }
+        })
     }
 
     injectHTML(){
